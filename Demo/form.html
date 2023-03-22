@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <header><h1>Form Demo</h1></header>
+    <main>
+        <section>
+            <h3>Form đăng ký</h3>
+            <form action="">
+                <label for="user">Tên tài khoản</label>
+                <br>
+                <input type="text" id="user" name="user">
+                <br>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" id="email" name="email"> 
+                <br> 
+                <label for="fullname">Họ và tên</label>
+                <br>
+                <input type="text" id="fullname" name="name">
+                <br>
+                <label for="age">Tuổi</label>
+                <br>
+                <input type="number" id="age" name="age" min="0" max="100">
+                <br>
+                <label for="password">password</label>
+                <br>
+                <input type="password" id="password" name="password">
+                <br>
+                <label for="ConfirmPassword">confirmPassword</label> <br>
+                <input type="password" name="ConfirmPassword" id="ConfirmPassword">
+                <br> <br>
+                <input type="submit" value="đăng ký"> 
+                <input type="reset" value="reset">
+                <input type="button" value="Submit">
+            </form>
+        </section> <br>
+        <!--  -->
+        <fieldset>
+            <legend>Gian hàng đồng giá 20k</legend>
+            <form action="">
+                <label for="name">Họ Và Tên</label><br>
+                <input type="text" name="name"><br>
+                <label for="địa chỉ">Địa Chỉ</label><br>
+                <textarea name="địa chỉ" id="địa chỉ" cols="30" rows="10"></textarea><br>
+                <label for="phone">Số điện thoại</label><br>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{4}-[0-9]-{3}-[0-9]{3}" placeholder="xxxx-xxx-xxx"><br>
+                <p>Sản phẩm muốn mua</p>
+                <label for="coffee">coffee</label>
+                <input type="checkbox" name="coffee" id="coffee" value="">
+                <input type="number" placeholder="SL" max="20" min="1">
+                <br>
+                <label for="tea">Trà</label>
+                <input type="checkbox" name="name" id="tea" value="">
+                <input type="number" placeholder="SL" max="20" min="1">
+                <br>
+                <label for="fruit">Nước Ép</label>
+                <input type="checkbox" name="fruit" id="fruit" value="">
+                <input type="number" placeholder="SL" max="20" min="1">
+                <br>
+                <p>Bạn có muốn thêm đá hay không?</p>
+                <input type="radio" name="ice" value="1" id="addIce">
+                <label for="addIce">Có</label>
+                <input type="radio" name="ice" value="0" id="noIce">
+                <label for="noIce">không</label>
+                <br>
+                <p>Hình thức thanh toán</p>
+                <select name="pay" id="">
+                    <option value="cash">Tiền mặt</option>
+                    <option value="bank">Chuyển khoản</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Đặt hàng">
+                <p></p>
+            </form>
+        </fieldset>
+        <!--  -->
+        form
+    </main>
+</body>
+</html>
