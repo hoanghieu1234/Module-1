@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <form action="https://learn.rikkeiacademy.com" method="get">
+        <table width = "500" style="border: solid 1px;">
+            <thead bgcolor="#FF4C00" style="color: aliceblue; text-align:center;" >
+                <tr>
+                    <td colspan="2">Sở Thích Cá Nhân</td>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <tr>
+                    <td align="left;" style="color: blue;">Họ Và Tên</td>
+                    <td><input type="text" name="name" value=""></td>
+                </tr> 
+                <tr>
+                    <td align="left" style="color: blue;">Email</td>
+                    <td><input type="email" name="email" value=""></td>
+                </tr>
+                
+                <tr>
+                    <td align="left" style="color: blue;">Sở thích</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="sport" id="sport">
+                                    <label for="sport">Thể Thao</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="music" id="music">
+                                    <label for="music">Âm nhạc</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="readBook" id="readBook">
+                                    <label for="readBook">Đọc Sách</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="surfWeb" id="surfWeb">
+                                    <label for="surfWeb">Lướt Web</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="playGame" id="playGame">
+                                    <label for="playGame">Chơi Game</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="firm" id="firm">
+                                    <label for="firm">Điện Ảnh</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="tourist" id="tourist">
+                                    <label for="tourist">Âm nhạc</label>
+                                </td>   
+                            </tr>
+                            <tr align="center">
+                                <td colspan="3">
+                                    <input type="submit" value="Gửi thông tin">
+                                    <input type="reset" value="Nhập lại">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </form> <br>
+    <form action="https://learn.rikkeiacademy.com" method="get">
+        <table style="border:solid ; background-color:#FFFDA9;">
+            <thead align="center" bgcolor = '#2caaaa' style="color: red;">
+                <tr>
+                    <td colspan="2">ĐĂNG KÝ HỌC VIÊN</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="color:#2740AA;">
+                        <label for="name">Họ Và Tên</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" name ="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#2740AA;">
+                        <label for="birth">Ngày Sinh</label>
+                    </td>
+                    <td>
+                        <input type="date" id="birth" name ="birth">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#2740AA;">
+                        <label for="sex">Giới Tính</label>  
+                    </td>
+                    <td>
+                        <input type="radio" id="sex" name ="sex">
+                        <input type="radio" id="sex" name ="sex">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#2740AA;">
+                        <label for="address">Địa Chỉ</label>
+                    </td>
+                    <td>
+                        <textarea name="address" id="address" cols="70" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#2740AA;">
+                        <label for="option">Chọn Lớp</label>
+                    </td>
+                    <td>
+                        <select name="Chọn lớp" id="option" >
+                            <option >1</option>
+                            <option >2</option>
+                            <option >3</option>
+                            <option >4</option>
+                            <option >5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#2740AA;">
+                        <label for="email">Email</label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#2740AA;">
+                        <label for="phone">Điện Thoại</label>
+                    </td>
+                    <td>
+                        <input type="tel" id="phone" name="phone">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="2">
+                        <input type="submit" value="Đăng ký">
+                        <input type="reset" value="Nhập Lại">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
