@@ -1,0 +1,12 @@
+.col {
+    float: left;
+    padding-left: 100px;
+    padding-right: 500px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+figure {
+    text-align: center;
+}
