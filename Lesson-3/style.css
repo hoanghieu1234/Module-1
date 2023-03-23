@@ -5,6 +5,9 @@ header {
     width:800px;
     text-align: center;
 }
+.header {
+    background-color: #33A2D6;
+}
 .header-menu {
 
     
@@ -16,28 +19,37 @@ header {
 }
  .header-item {
     display: inline;
+    text-decoration: none;
     justify-content: space-between;
     font-size: 16px;
     font-weight: 200; 
     padding: 5px; 
     text-align: justify;
 }
+ .header-item a {
+    color: red;
+    text-decoration: none;
+    /* border: 1px solid #000; */
+
+ }
+ .header-item a:hover {
+    color: white;
+    background-color: #33A2D6;
+ }
 button {
     background-color: #33A2D6 ;
 }
-.header-item  a{
-    color: #33A2D6;
-}
+
 .list {
 
     text-align: inherit;
     list-style-type: none;
 }
+.list li a {
+    text-decoration: none;
+}
 body {
     width:800px;
-}
-.list {
-    margin-left: 0px;
 }
 .notelist {
     float: right;
