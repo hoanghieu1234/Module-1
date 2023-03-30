@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Example-4/style.css">
+    <title>Document</title>
+</head>
+<body>
+        <!--fullname-->
+       <div class="fulname">
+            <div class="first-name">
+                <label for="first-name">First name*</label>
+                <input type="text" id="first-name" placeholder="Nhập Họ Của Bạn" value="">
+            </div>
+            <div class="last-name">
+                <label for="last-name">Last name*</label>
+                <input type="text" id="last-name" placeholder="Nhập Tên Của Bạn" value="">
+            </div>
+       </div>
+       <!-- address -->
+       <div class="address">
+            <label for="address">Where Are You?*</label>
+            <input type="text" id="address" placeholder="Nhập Địa Chỉ Của Bạn" value="">
+            <i>Street Adress</i>
+       </div>
+       <div class="address-line-2">
+            <input type="text" name="" id="street-line-2">
+            <i>Address Line 2</i>
+       </div>
+       <!-- live -->
+       <div class="live">
+            <div class="city">
+                <input type="text" name="" id="city"> <br>
+                <i>city</i>
+            </div>
+            <div class="place">
+                <input type="text" name="" id="place"> <br>
+                <i>State/Region/Provice</i>
+            </div>
+       </div>
+       <!-- country -->
+       <div class="country">
+            <div class="zip-code">
+                <input type="text" name="" id="zip-code"> <br>
+                <i>zip-code</i> 
+            </div>
+            <div class="select-country">
+                <select name="" id="country">
+                    <option value="">Đà Nẵng</option>
+                    <option value="">Hồ Chí Minh</option>
+                    <option value="">Hà Nội</option>
+                </select> <br>
+                <i>Country</i>
+            </div>
+       </div>
+       <!-- range: tiến trình/progress -->
+        <div class="progress">
+            <label for="progress">What's progress status?*</label>  <br>
+            <input type="range" name="" id="progress" value="100%">
+        </div>       
+        <!-- radio -->
+        <div class="radio">
+            <label for="radio">Do you need any more material ?*</label> <br>
+            <input type="radio" name="radio" id="radio-1" value="1">
+
+            <input type="radio" name="radio" id="radio-2" value="2">
+        <!-- checkbox -->
+        <div class="check-box">
+            <h3>What more do you need ?</h3>
+            <label for="check-box-1">Sand</label>
+            <input type="checkbox" name="check-box-1" id="check-box-1">
+            <br>
+            <label for="check-box-2">Sand</label>
+            <input type="checkbox" name="check-box-2" id="check-box-2">
+            <br>
+            <label for="check-box-3">Sand</label>
+            <input type="checkbox" name="check-box-3" id="check-box-3">
+            <br>
+            <label for="check-box-4">Sand</label>
+            <input type="checkbox" name="check-box-4" id="check-box-4">
+        </div>
+        <!-- area -->
+        <div class="area">
+            <label for="cmt">Any other comments</label> <br>
+            <textarea name="cmt" id="cmt" cols="50" rows="5"></textarea>
+        </div>
+        <!-- btn -->
+        <div class="btn">
+            <button onclick="lession_4()">submit</button>
+        </div>
+</body>
+<script src="/Example-4/main.js"></script>
+</html>

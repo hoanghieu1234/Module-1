@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box  ;
+}
+body {
+    max-width: 1000px;
+    min-height: 500px;
+    border: 2px solid;
+    margin: 50px 50px;
+}
+.fulname {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.address {
+    display: grid;
+    grid-row-gap: 5px;
+    padding: 15px 125px;
+}
+.address-line-2 {
+    display: grid;
+    grid-row-gap: 5px;
+    padding: 8px 125px;
+}
+.live {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px -83px;
+}
+.country {
+    display: flex;
+    justify-content: space-around;
+    margin-left: -76px;
+    margin-top: 10px;
+}  
+.progress {
+    padding: 25px 120px;
+} 
+.radio {
+    padding: 25px 120px;
+}
+.check-box {
+    padding: 25px 5px; 
+}
+.area {
+    
+}
+

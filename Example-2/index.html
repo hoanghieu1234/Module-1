@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <label for="amount">Amount</label>
+        <input type="text" name="Amount" id="amount" placeholder="Nhập số tiền muốn chuyển đổi">
+    <!--  -->
+    <br>
+    
+        <label for="currency" value = "VND">From Curency</label>
+        <select name="From Currency" id="currency">
+            <option value="VND">Việt Nam</option>
+            <option value="USD">Mỹ</option>>
+        </select>
+    <!--  -->
+    <br>
+        <label for="to_currently" value = "USD">To Curency</label>
+        <select name="From Curency" id="to_currently" >
+            <option value="USD" >Mỹ</option>
+            <option value="VND">VIỆT</option>
+        </select>
+    <br>
+    <button onclick="Bai_2()">Convert</button>
+    <!-- disable người dùng ko thể tác động đc -->
+    <input type="text" disabled placeholder="Kết quả" id="result">
+</body>
+<script src="/Example-2/main.js"></script>
+</html>
