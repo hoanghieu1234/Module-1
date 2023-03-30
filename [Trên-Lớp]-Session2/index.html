@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/facebook (1).jpg">
+    <title>Demo HTML5</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./img/3.jpg" alt="" width="150" height="100">
+                <ul class="menu">
+                    <li><a href="./video.html" target="_blank">Video giới thiệu</a></li>
+                    <li><a href="./audio.html">Album audio</a></li>
+                    <li><a href="./media.html">Nhạc không lời</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Header -->
+    <main>
+        <section>
+            <header><h1>Demo các thẻ HTML5 - ngày 21.03.2023</h1></header>
+             <!-- controls có thể bấm dừng,chạy. autoplay khi chạy trình duyệt nó sẽ chạy luôn -->
+            <header><h3>Video giới thiệu về ca nhạc</h3></header>
+            <video controls muted autoplay width="50%">
+                <source src="./video/Ta-Chang-Con-Ai-Lyric-Pham-Hoai-Nam.mp4">
+            </video>
+            <br>
+            <a href="./video.html" target="_blank">Xem Thêm</a>
+        </section>
+
+        <section>
+            <!--audio  -->
+            <header><h3>Audio nổi bật</h3></header>
+            <audio controls muted autoplay>
+                <source src="./audio/(Piano Ver.) Không Yêu Xin Đừng Nói - UMIE (Prod. ToneRx).mp4" type="audio/mp4">
+                your browser does not support the audio element
+            </audio>
+            <br>
+            <a href="./audio.html" target="_blank">Xem thêm</a>
+        </section>
+    </main>
+    <!-- main -->
+    <aside>
+        <h3>Đánh giá:</h3>
+        <label for="service">Chất lượng dịch vụ</label>
+        <progress id="service" value="95" max="100">95%</progress>
+        <br>
+        <label for="infrastructure">Cơ sở vật chất</label>
+        <progress id="infrastructure" value="95" max="100">95%</progress>
+    </aside>
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+    <div id="fb-customer-chat" class="fb-customer-chat"></div>
+    <script>
+        var chatbox = document.getElementById("fb-customer-chat");
+        chatbox.setAttribute("page_id","PAGE_ID")
+        chatbox.setAttribute("attribution","biz_inbox")
+    </script>
+    <script>
+
+    </script>
+    <!-- footer -->
+    <footer>
+        <h3>Liên hệ với chúng tôi</h3>
+        <ul>
+            <li>
+                <b>Hotline:</b>
+                <a href="tel:0899548260">0899548260</a>
+            </li>
+            <li>
+                <b>Email:</b>
+                <a href="mailto:hieunguyenhl123@gmail.com">hieunguyenhl123@gmail.com</a>
+            </li>
+            <li>
+                <b>zalo</b>
+                <a href="https://zalo.me/0899548260" target="_blank">0899548260</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
