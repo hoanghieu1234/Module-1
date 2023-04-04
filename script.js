@@ -162,3 +162,127 @@ function primeString() {
   }
   console.log("Dãy số nguyên tố là", primeString);
 }
+
+// Session 13
+// Bài 1: 3: Hiển thị 20 số Fibonacci
+function printFibonacci() {
+  const number = 20;
+  let a = 1;
+  let b = 2;
+  let FibonacciString = a + " " + b;
+
+  for (let i = 2; i < 20; i++) {
+    let Fibonacci = a + b;
+    a = b;
+    b = Fibonacci;
+    FibonacciString += " " + Fibonacci;
+  }
+
+  const printFibonacci = document.querySelector("#print-fibonacci");
+  printFibonacci.innerHTML = FibonacciString;
+}
+
+// Bài 1: 4: Tìm số Fibonacci chia hết cho 5:
+function findNumber() {
+  const number = 20;
+  let a = 1;
+  let b = 2;
+
+  for (let i = 2; i < 20; i++) {
+    let Fibonacci = a + b;
+    a = b;
+    b = Fibonacci;
+    if (Fibonacci % 5 == 0) {
+      const printFibonacci = document.querySelector("#fibonacci-mod-5");
+      printFibonacci.innerHTML = Fibonacci + " là số Fibonacci chia hết cho 5";
+      break;
+    }
+  }
+}
+
+// Bài 1: 7 Fizz và Buzz
+
+function FizzBuzz() {
+  let print = "";
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0) {
+      if (i % 5 == 0) {
+        print += "FizzBuzz ";
+      } else {
+        print += "Fizz ";
+      }
+    } else if (i % 5 == 0) {
+      print += "Buzz ";
+    } else {
+      print += i + " ";
+    }
+  }
+  console.log("Print Fizz and Buzz:", print);
+}
+
+function printTriangle() {
+  let content = "";
+  const start = "*";
+  const space = "&nbsp;&nbsp;";
+  const n = Number(prompt("Nhập vào chiều dài của tam giác"));
+
+  for (let i = 1; i <= n; i++) {
+    content += space.repeat(n - i);
+    content += start.repeat(i);
+    content += "<br>";
+  }
+  const printTriangle = document.querySelector("#print-triangle");
+  printTriangle.innerHTML = content;
+}
+
+// Bài 8: Game đoán số
+
+function guessNumber() {
+  // Dãy số random từ 0 đến bé hơn hoặc bằng range
+  const range = Number(prompt("Bạn muốn đoán trong khoảng từ 0 đến mấy?"));
+
+  // Tạo số random
+  const randomNumber = Math.floor(Math.random() * (range + 1));
+  console.log("check number random", randomNumber, range);
+
+  do {
+    // Nhập vào số để đoán
+    const guessNumber = Number(
+      prompt("Bạn đoán số mấy? (Điền chữ để kết thúc trò chơi)")
+    );
+
+    // Kiểm tra số nhập vào có phải NaN hay không?
+    if (Number.isNaN(guessNumber)) {
+      // Return là lệnh dùng trong function, dùng để kết thúc function và trả về giá trị
+      return alert("Cảm ơn bạn đã tham gia");
+    }
+    if (guessNumber == randomNumber) {
+      // Khi đoán đúng thì kết thúc trò chơi
+      return alert("Chúc mừng, bạn đã đoán đúng");
+    } else if (guessNumber < randomNumber) {
+      alert("Vui lòng nhập số lớn hơn");
+    } else {
+      alert("Vui lòng nhập số nhỏ hơn");
+    }
+  } while ("hello");
+}
+
+// session 13: bài 2: In trái tim
+
+function printHeart() {
+  let print = "";
+  for (let row = 0; row <= 5; row++) {
+    for (let col = 0; col <= 6; col++) {
+      if ((row == 0 && col % 3 != 0) || (row == 1 && col % 3 == 0)) {
+        print += "* &nbsp;";
+      } else if (row - col == 2 || row + col == 8) {
+        print += "* &nbsp;";
+      } else {
+        print += "&nbsp;&nbsp;&nbsp;";
+      }
+    }
+    print += "<br>";
+  }
+  const heart = document.querySelector("#print-heart");
+  heart.innerHTML = print;
+}
