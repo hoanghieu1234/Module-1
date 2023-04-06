@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="this_ul"></ul>
+    <section class="card">
+        <h3>Bài 2</h3>
+        <button onclick="handleNumber()">
+            Bài 2 - Nhập dãy số rồi phân tích
+        </button>
+        <input type="text" id="numberChange" oninput="handleOninput(this)">
+        <p id="result-change"></p>
+        <p id="result-change-2"></p>
+        <p id="result-change-3"></p>
+        <input type="text" id="numberChange" oninput="vietAnh(this)">
+        <p id="result-change-4"></p>
+    </section>
+</body>
+<script> 
+    // let drinks = ['cocacola','redbull','pessi','sting','rockstar'];
+    // const productList = document.querySelector('#this_ul')
+    // let contentProductList = ''; 
+    // for (const water of drinks) {
+    //     contentProductList += `<li>${water}</li>`;
+    // }
+    // productList.innerHTML = contentProductList;
+
+    // const students = [];
+
+    // // Thêm element vào Array - push ()
+    // // CRUD Create - Read - Update - Delete
+    // console.log("Kiểm tra chiều dài student",students.length);
+    // const newLenght = students.push("Khoa");
+    // console.log(students,newLenght);
+    // // Bảng cữu chương -->
+    // const multiplication_table = [];
+    // for (let row = 0; row < 9; row ++) {
+    //     multiplication_table = 
+    // }
+    // // *Bài 1
+    // const myColor = ["Red","Green","While","Black"];
+    // console.log(myColor.toString());
+    // console.log(myColor.join("-"));
+    // * Bài 2
+    // Thay đổi số - cách 1
+    const result_1 = document.querySelector("#result-change");
+    let resultString_1 = "";
+    function handleNumber() {
+        const valueNumber = document.querySelector("#numberChange").value;
+        for(let i = 0;i < valueNumber.length; i ++) {
+            if (valueNumber[i] % 2 == 0 && valueNumber[i + 1] % 2 == 0) {
+                resultString_1 += valueNumber[i] + "-";
+            } else {
+                resultString_1 += valueNumber[i];
+            }
+        }
+        result_1.innerHTML = resultString_1;
+    }
+    // Cách 2
+    const result_2 = document.querySelector('#result-change-2');
+    function handleOninput(element) {
+        const valueInput = element.value;
+        let resultString_2 = [];
+        for(let i = 0; i < valueInput.length; i++) {
+            if(valueInput[i] % 2 == 0 && valueInput[i] + 1 % 2 == 0 ) {
+                resultString_2.push(valueInput[i] + "-")
+            }else{
+                resultString_2.push(valueInput[i])
+            }
+        }
+        result_2.innerHTML = resultString_2;
+    }
+    // cach 1
+    const LOWER = "QWERTYUIOPLKJHGFDSAZXCVBNM";
+    const UPER = "qwertyuioplkjhgfdsazxcvbnm";
+    let convertSTR = " ";
+    let isUpper = false;
+
+    for(let k = 0; k < str.length; k++) {
+        let isUpper = false;
+        for(let i = 0; i < UPER.length; i++) {
+            if(str[k] == UPER[i]) {
+                isUpper = true;
+
+                break;
+            }
+        }
+    }
+    if (isUpper) {
+        convertSTR += str[k].toLowerCase();
+    }else {
+        convertSTR += str[k].toUperCase();
+    }
+
+
+    // Bài 2:Từ điển
+    function vietAnh(element) {
+        const _valueInput = document.querySelector('#result-change-4');
+        const valueInput = element.value;
+        const english = ["Red","Blue","Orrange","Green","Black"];
+        const tiengViet = ["Đỏ","Xanh","Cam","Xanh Lá","Đen"];
+        let outString = " ";
+        for (let i = 0; i < english.length; i++){
+            if(english[i] == valueInput) {
+                outString += tiengViet[i];
+
+            }
+        }
+        _valueInput.innerHTML = outString;
+    }
+    //
+</script>
+</html>
