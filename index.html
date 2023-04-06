@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 14 - Array</title>
+    <style>
+      .card {
+        border: 2px solid green;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list-product"></ul>
+    <input type="text " id="student" onchange="handleOnChange()" />
+    <button onclick="handleAdd()">Add</button>
+    <ul id="students"></ul>
+    <!-- Xây dựng bảng cửu chương và lưu trữ trong array -->
+
+    <section class="card">
+      <h3>Bài 1 - session 14</h3>
+      <button onclick="handleNumber()">
+        Bài 2 - Nhập dãy số rồi phân tách
+      </button>
+      <input type="text" id="number-change" oninput="handleOnInput(this)" />
+
+      <p id="result-change"></p>
+      <p id="result-change-2"></p>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
