@@ -74,8 +74,8 @@ console.log("Kiểm tra dữ liệu bảng cửu chương", multiplication_table
 // Thay đổi số - cách 1
 const result_1 = document.querySelector("#result-change");
 let resultString_1 = "";
+const valueNumber = document.querySelector("#number-change").value;
 function handleNumber() {
-  const valueNumber = document.querySelector("#number-change").value;
   for (let i = 0; i < valueNumber.length; i++) {
     if (valueNumber[i] % 2 == 0 && valueNumber[i + 1] % 2 == 0) {
       resultString_1 += valueNumber[i] + "-";
@@ -104,4 +104,79 @@ function handleOnInput(element) {
   // in kết quả
   const arrayToString = resultString_2.join("");
   result_2.innerHTML = arrayToString;
+}
+
+// Bài 3: Chuyển đổi String
+
+const resultConvertString = document.querySelector("#result-convert-string");
+
+function convertString(element) {
+  const str = element.value;
+
+  const UPPER = "ABCDEFGHIKLMNOPQTUVXYZW";
+  let convertStr = "";
+  for (let k = 0; k < str.length; k++) {
+    let isUpper = false;
+    for (let i = 0; i < UPPER.length; i++) {
+      if (str[k] == UPPER[i]) {
+        isUpper = true;
+        break;
+      }
+    }
+
+    if (isUpper) {
+      convertStr += str[k].toLowerCase();
+    } else {
+      convertStr += str[k].toUpperCase();
+    }
+  }
+
+  resultConvertString.innerHTML = convertStr;
+}
+
+// Cách 2:
+
+function convertString2(element) {
+  const str = element.value;
+  const UPPER = "ABCDEFGHIKLMNOPQTUVXYZW";
+  let convertStr = "";
+
+  //   Dùng vòng lặp lặp qua từng chữ đã nhập
+  for (const word of str) {
+    // Dùng includes() để xác định chữ cái đó có trong chuỗi in hoa hay không?
+    if (UPPER.includes(word)) {
+      convertStr += word.toLowerCase();
+    } else {
+      convertStr += word.toUpperCase();
+    }
+  }
+  resultConvertString.innerHTML = convertStr;
+}
+
+// Bài 3 Typing
+
+// Lắng nghe sự kiện khi nhập bàn phím từ textarea
+
+// Đếm số lần sự kiện oninput thực hiện
+let count = 0;
+// Chuỗi số cần hiển thị
+const str = "Tôi là thằng ngốc";
+// Kết quả trả về
+let result = str[count];
+
+// Function được gọi khi oninput thay đổi
+function handleKey(element) {
+  // Khi oninput thay đổi --> thay đổi giá trị của input như str đã được tạo
+  element.value = result;
+  // Khi mà, số lần nhập lớn hơn bằng str.length -1 (số chỉ mục - index) = chữ cuối cùng
+  if (count >= str.length - 1) {
+    // Đếm lại từ đầu
+    count = 0;
+    // Kết quả nhập lại từ đầu
+    result = str[count];
+  } else {
+    // Nối chuỗi str thứ count tiếp
+    count++;
+    result += str[count];
+  }
 }
