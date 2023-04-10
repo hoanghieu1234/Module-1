@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border-radius: 20px;
+            padding: 20px 20px;
+            background-color: aqua;
+            margin: 20px;
+        }
+        input, button{
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        hr {
+            margin-bottom: 20px;
+        }
+        table,tr,th,td {
+            border: 1px solid;
+            border-collapse: collapse ;
+            width: 100%;
+        }
+        th {
+            text-align: center;
+        }
+        table tr:nth-child(even) {
+            background-color: rgb(131, 136, 134);
+        }
+        table tr:nth-child(even) input{
+            background-color: rgb(131, 136, 134);
+        }
+        table input {
+            border: none;
+            outline: none;
+        }
+        #btn-update {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="card">
+        <!-- Chỉ cần lấy value giá trị input; this.value là lấy giá trị của thẻ button và input-->
+        <input type="text" oninput="isPrime(this.value)"/>
+        <button onclick="isPrime()">Kiểm tra số nguyên </button>
+        <p class="result"></p> 
+    </section>
+    <section class="card">
+        <!-- Chỉ cần lấy value giá trị input; this.value là lấy giá trị của thẻ button và input-->
+        <input type="text" oninput="isPrime(this.value)"/>
+        <button onclick="isPrime()">Kiểm tra số nguyên </button>
+        <p class="result"></p> 
+    </section>
+    <section class="card">
+        <input type="text" placeholder="Add new product" id="add-id-product">
+        <button onclick="handleAdd()" id="btn-add">Add</button>
+        <button id="btn-update">Update</button>
+        <br>
+        <hr>
+        <table cellpadding = "20">
+            <tr>
+                <th>NO</th>
+                <th>Product Name</th>
+                <th colspan="2">Action</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sony Xperia</td>
+                <td><button onclick="handleEdit()">Edit</button></td>
+                <td><button onclick="handleDelete()">Delete</button></td>
+            </tr>
+        </table>
+    </section>
+</body>
+<script>
+    // function isPrime(number) {
+    //     // Chuyển đổi number dạng Number
+    //     const convertNumber = Number(number);
+    //     console.log(convertNumber);
+    //     let isPrime = true;
+    //     if (convertNumber < 2) {
+    //         isPrime = false;
+    //         return renderResult(false);
+    //     }
+    //     for( let i = 2; i <= Math.sqrt(convertNumber); i++){
+    //         if(convertNumber % i == 0) {
+    //             isPrime = false;
+    //             return renderResult(isPrime); // False
+    //         }
+    //     }
+    //     return renderResult(true);
+    // }
+    // function renderResult(isPrime) {
+    //     const result = document.querySelector('.result')
+    //     if (isPrime) {
+    //         return (result.innerHTML = "Đây là số nguyên tố");
+    //     }
+    //         return (result.innerHTML = "Đây không phải là số nguyên tố");
+    // }
+    // Bài 1: Session-16
+    function isPrime(number) {
+        const convertNumber = Number(number);
+        console.log(convertNumber);
+        let isPrime = true;
+        if (convertNumber < 2) {
+            isPrime = false;
+            return renderResult(false);
+        }
+        for( let i = 2; i <= Math.sqrt(convertNumber); i++){
+            if(convertNumber % i == 0) {
+                isPrime = false;
+                return renderResult(isPrime); // False
+            }
+        }
+        return renderResult(true);
+    }
+    function renderResult(isPrime) {
+        const result = document.querySelector('.result')
+        if (isPrime) {
+            return (result.innerHTML = "Đây là số nguyên tố");
+        }
+            return (result.innerHTML = "Đây không phải là số nguyên tố");
+    }
+    function checkIsprime(number) {
+        let result = '';
+        for(i = 0; i < 1000; i++) {
+            if(isPrime(i)) {
+                result += i + "_"
+            }
+        }
+    }
+
+    // Bài 3
+    const products = ['Sony','LG','Apple','Nokia','Xiaomi'];
+    // Add
+    function handleAdd() {
+        const valueInput = document.querySelector("#add-id-product").value;
+        products.push(valueInput);
+        renderProducts(products);
+        console.log('Kiểm tra',products);
+    }
+    renderProducts(products);
+    // Delete
+    function handleDelete(index) {
+        products.splice(index,1);
+        renderProducts(products);
+    }
+    function renderProducts(data) {
+        // Đặt ID để lấy đúng table mong muốn
+        const table = document.querySelector("table");
+        let contentTable = `  <tr>
+                <th>NO</th>
+                <th>Product Name</th>
+                <th colspan="2">Action</th>
+                </tr>`;
+                data.forEach((product,index) => {
+                    contentTable += ` <tr>
+                    <td>${index + 1}</td>
+                    <td><input value="${product}" readonly id="product-${index}"/></td>
+                    <td><button onclick="handleEdit('${index}')">Edit</button></td>
+                    <td><button onclick="handleDelete(${index})">Delete</button></td>
+                </tr>`;
+                });
+        table.innerHTML = contentTable;
+    }
+    function handleEdit(index) {
+        const inputProduct = document.querySelector("#add-id-product")
+        inputProduct.value = products[index];
+        updateElement = document.querySelector("#btn-update");
+        addElement = document.querySelector("#btn-add");
+
+        updateElement.style.display = "inline-block";
+        updateElement.setAttribute("onclick",`handleUpdate(${index})`);
+        addElement.style.display = "none";
+    }
+    function handleUpdate(index) {
+        const inputProduct = document.querySelector('#add-id-product');
+        console.log(index,"update");
+
+        products.splice(index,1,inputProduct.value);
+        renderProducts(products);
+    }
+</script>
+</html>
