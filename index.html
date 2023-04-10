@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 16 - Function</title>
+    <style>
+      .card {
+        padding: 30px;
+        margin-bottom: 50px;
+        border-radius: 20px;
+        border: 2px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Session 16 - Function</h1>
+    </header>
+    <main>
+      <section class="card">
+        <!-- Chỉ cần lấy value của input -->
+        <input type="text" oninput="isPrime(this.value)" />
+        <button onclick="isPrime()">Kiểm tra số nguyên</button>
+        <p class="result"></p>
+      </section>
+      <section class="card">
+        <!-- Chỉ cần lấy value của input -->
+        <input
+          type="text"
+          oninput="footToMeter(this.value)"
+          placeholder="foot to met"
+        />
+        <span>T0 Met</span>
+        <input type="text" disabled id="foot-to-met" />
+        <br />
+        <br />
+        <input
+          type="text"
+          oninput="metToFoot(this.value)"
+          placeholder="met to foot"
+        />
+        <span>To Foot</span>
+        <input type="text" id="met-to-foot" disabled />
+      </section>
+    </main>
+    <script>
+      function isPrime(number) {
+        // Chuyển đổi number thành dạng Number
+        const convertNumber = Number(number);
+        let isPrime = true;
+        if (convertNumber < 2) {
+          isPrime = false;
+          renderResult(false);
+          return false;
+        }
+        for (let i = 2; i <= Math.sqrt(convertNumber); i++) {
+          if (convertNumber % i == 0) {
+            isPrime = false;
+            renderResult(isPrime);
+            return false; // false
+          }
+        }
+        renderResult(true);
+        return true;
+      }
+
+      function renderResult(isPrime) {
+        const result = document.querySelector(".result");
+        if (isPrime) {
+          return (result.innerHTML = "Đây là số nguyên tố");
+        }
+        return (result.innerHTML = "Đây là không phải là số nguyên tố");
+      }
+      console.log(renderResult(false));
+      const a = true;
+      const b = 2;
+      let c = 2;
+      function isCheck(a) {
+        let b = 3;
+        let status = !a;
+        console.log(b);
+        c = 3;
+
+        return status;
+      }
+      let status = false;
+
+      console.log(isCheck());
+      console.log(status);
+
+      //   Kiểm tra số nguyên tố từ 0 đến N
+      let result = "";
+      function primeString(number) {
+        for (let i = 0; i <= number; i++) {
+          if (isPrime(i)) {
+            result += i + " ";
+          }
+        }
+        console.log("Dãy số nguyên tố là", result);
+      }
+      primeString(3000);
+
+      //
+
+      function footToMeter(foot) {
+        const meter = 0.305 * foot;
+        const resultMet = document.querySelector("#foot-to-met");
+        resultMet.value = meter + " met";
+      }
+      function metToFoot(meter) {
+        const foot = 3.279 * meter;
+        const resultFoot = document.querySelector("#met-to-foot");
+        resultFoot.value = foot + " foot";
+      }
+    </script>
+  </body>
+</html>
