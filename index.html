@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="control">
+      <input
+        type="text"
+        placeholder="Search..."
+        id="input-search"
+        oninput="handleSearch2(this.value)"
+      />
+      <button onclick="handleSearch()">Search</button>
+      <br />
+      <br />
+      <button onclick="handleToggle(this)">Create user</button>
+    </div>
+    <div id="form">
+      <div>
+        <input type="text" id="id-user" hidden />
+      </div>
+      <div>
+        <label for="avatar">Avatar</label>
+        <input
+          type="file"
+          id="avatar"
+          name="avatar"
+          oninput="handleOnChange(this)"
+        />
+      </div>
+      <div>
+        <label for="first-name">First name</label>
+        <input
+          type="text"
+          id="first-name"
+          name="firstName"
+          oninput="handleOnChange(this)"
+        />
+      </div>
+
+      <div>
+        <label for="last-name">Last name</label>
+        <input
+          type="text"
+          id="last-name"
+          name="lastName"
+          oninput="handleOnChange(this)"
+        />
+      </div>
+
+      <div>
+        <label for="user-name">User name</label>
+        <input
+          type="text"
+          id="user-name"
+          name="username"
+          oninput="handleOnChange(this)"
+        />
+      </div>
+      <div>
+        <button onclick="handleAddUser()">Submit</button>
+        <button onclick="handleAddUser2()">Submit nâng cao</button>
+      </div>
+    </div>
+
+    <table cellpadding="20">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Avatar</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>User name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><img src="./images/user_3.jpg" alt="avt-user-3" /></td>
+          <td>Phúc</td>
+          <td>Nguyễn</td>
+          <td>nguyenphuc123</td>
+          <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><img src="./images/user_3.jpg" alt="avt-user-3" /></td>
+          <td>Phúc</td>
+          <td>Nguyễn</td>
+          <td>nguyenphuc123</td>
+          <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="./script.js"></script>
+  </body>
+</html>

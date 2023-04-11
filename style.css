@@ -1,0 +1,38 @@
+table img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead tr {
+  border-bottom: 2px solid grey;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  border-collapse: collapse;
+}
+table button {
+  margin-right: 10px;
+}
+
+/* Form css */
+#form {
+  width: 500px;
+  display: none;
+}
+#form > * {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 30% 70%;
+  margin: 20px;
+}
