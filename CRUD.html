@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD-OBJECT</title>
+</head>
+<style>
+    /* Form css */
+    #form {
+    width: 500px;
+    display: none;
+    }
+    #form > * {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 30% 70%;
+    margin: 20px;
+    }
+
+    .card {
+        border-radius: 20px;
+        padding: 20px 20px;
+        background-color: bisque;
+        margin: 20px;
+    }
+    input, button {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    hr {
+            margin-bottom: 20px;
+    }
+    table {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        text-align: center;
+        width: 10%;
+        
+    }
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    table tr:nth-child(even) {
+        background-color: rgb(131, 136, 134);
+    }
+    table tr:nth-child(even) input{
+        background-color: rgb(131, 136, 134);
+    }
+    #btn-update {
+        display: none;
+    }
+</style>
+<body>
+    <section class="card">
+       
+        <div id="form">
+            <div>
+              <input type="text" id="id-user" hidden />
+            </div>
+            <div>
+              <label for="avatar">Avatar</label>
+              <input
+                type="file"
+                id="avatar"
+                name="avatar"
+                oninput="handleOnChange(this)"
+              />
+            </div>
+            <div>
+              <label for="first-name">First name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                oninput="handleOnChange(this)"
+              />
+            </div>
+      
+            <div>
+              <label for="last-name">Last name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                oninput="handleOnChange(this)"
+              />
+            </div>
+      
+            <div>
+              <label for="user-name">User name</label>
+              <input
+                type="text"
+                id="user-name"
+                name="username"
+                oninput="handleOnChange(this)"
+              />
+            </div>
+            <div>
+              <button onclick="handleAddUser()">Submit</button>
+              <button onclick="handleAddUser2()">Submit nâng cao</button>
+            </div>
+          </div>
+          <br>
+          <button onclick="handleToggle(this)">Create user</button>
+        <button id="btn-update">Update</button>
+        <br>
+        <input type="text" placeholder="Username Or First Name" id="add-input" oninput="handleSearch2(this.value)">
+        <button onclick="handleSearch()" id="btn-search" >Tìm Kiếm</button>
+        
+        <br>
+        <hr>
+        <table cellpadding = "20">
+            <tr>
+                <th>STT</th>
+                <th>Avatar</th>
+                <th>Firt</th>
+                <th>Last</th>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><img src="./img/1.jpg" alt="" srcset=""></td>
+                <td>Karn</td>
+                <td>Young</td>
+                <td>hieunguyenhl123@gmail.com</td>
+                <td><button onclick="handleEdit()">Edit</button></td>
+                <td><button onclick="handleDelete()">Delete</button></td>
+            </tr>
+        </table>
+    </section>
+</body>
+<script>
+    const users = [ 
+          {
+            stt: '1',
+            avartar: "./img/1.jpg",
+            First:'hiếu',
+            Last:'nguyễn',
+            Username:'hieunguyenhl123@gmail.com',
+          },
+          {
+            stt: '2',
+            avartar: "./img/2.jpg",
+            First:'Thái',
+            Last:'nguyễn',
+            Username:'hieunguyenhl123@gmail123.com'
+          },
+          {
+            stt: '3',
+            avartar: "./img/3.jpg",
+            First:'Khánh',
+            Last:'nguyễn',
+            Username:'hieunguyenhl123@gmail1972.com'
+          },
+          {
+            stt: '4',
+            avartar: "./img/4.jpg",
+            First:'Water',
+            Last:'Beanj',
+            Username:'hieunguyenhl123@gmail113.com'
+          },
+          {
+            stt: '5',
+            avartar: "./img/5.jpg",
+            First:'Della',
+            Last:'Robin',
+            Username:'hieunguyenhl123@gmail114.com'
+          },
+    ]
+    // Render
+    function renderUsers(users) {
+        const table = document.querySelector("table");
+        let contentTable = ` <tr>
+                            <th>STT</th>
+                            <th>Avatar</th>
+                            <th>Firt</th>
+                            <th>Last</th>
+                            <th>Username</th>
+                            <th>Action</th>
+                            </tr>`;
+            users.forEach((user,index,array) => {
+                contentTable += ` <tr>
+                                    <td>${index + 1}</td>
+                                    <td><img src="${user.avartar}" alt="" srcset=""></td>
+                                    <td>${user.First}</td>
+                                    <td>${user.Last}</td>
+                                    <td>${user.Username}</td>
+                                    <td><button onclick="handleEdit('${index}')">Edit</button></td>
+                                    <td><button onclick="handleDelete(${index})">Delete</button></td>
+                                </tr>`
+            });
+            table.innerHTML = contentTable;
+    }
+    renderUsers(users);
+    // Search
+    function handleSearch() {
+        // b1:Lấy giá trị của input search
+        const valueSearch = document.querySelector('#add-input').value;
+        console.log("Kiểm tra search",valueSearch);
+
+        const dataSearch = [];
+        users.forEach((user) => {
+            if (
+                user.First.toLowerCase().includes(valueSearch.toLowerCase()) ||
+                user.Username == valueSearch
+            ) {
+                dataSearch.push(user);
+            }
+        });
+        console.log("",dataSearch);
+        renderUsers(dataSearch);
+    }
+    // Search cách 2 =>
+    function handleSearch2(value) {
+        const dataSearch = users.filter(
+            (user) =>
+                user.First.toLowerCase().includes(value.toLowerCase()) ||
+                user.Username.toLowerCase().includes(value.toLowerCase())   
+        );
+        renderUsers(dataSearch);
+    }
+    // Create
+    function handleToggle(element) {
+        // Lấy element để đổi thông tin thẻ button
+
+        // B1.Lấy element cần chỉnh sửa
+        const form = document.querySelector('#form');
+        
+        // Đặt điều kiện kiểm tra để ẩn/ hiện form
+        if (!form.style.display || form.style.display === "none") {
+            form.style.display = "block";
+        } else {
+            form.style.display = "none";
+        }
+    }
+
+    function handleAddUser() {
+        // B1. Lấy tất cả card giá trị trong form
+        const avatar = document.querySelector("#avatar");
+        const firstName = document.querySelector("#first-name");
+        const lastName = document.querySelector("#last-name");
+        const userName = document.querySelector("#user-name");
+        // const idInput = document.querySelector("#id-user").value;
+
+        // B2. Đặt biến là 1 object theo cấu trúc của users
+
+        const _user = {
+            id: users[users.length].stt + 1,
+            firstName: firstName.value,
+            lastName: lastName.value,
+            imageUrl: avatar.value,
+            username: userName.value,
+        };
+
+        users.push(_user);
+        renderUsers(users);
+        handleToggle();
+
+        firstName.value = "";
+        lastName.value = "";
+        userName.value = "";
+    }
+    // Delete
+    function handleDelete(index) {
+        users.splice(index,1);
+        renderUsers(users);
+    }
+    // Edit
+    
+    function handleUpdate(index) {
+        const  inputUser = document.querySelector('#btn-add');
+        console.log(index,"update");
+
+        users.splice(index,1,inputUser.value);
+        renderUsers(users);
+    }
+</script>
+</html>
