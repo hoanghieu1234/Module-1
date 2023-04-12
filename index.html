@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="banner">
+        <img src="./img/brank.jpg" alt="" srcset="">
+    </div>
+    <div id="content">
+        <div class="content-session">
+            <h2 class="session-heading">THE BAND</h2>
+            <p class="session-sub-heading">We love music</p>
+            <p class="about-text">
+                We have created a fictional band website. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+    </div>
+    <div class="control">
+        <input type="text" placeholder="search" id = "input-search" oninput="handleSearch2(this.value)">
+        <button onclick="handleSearch()">Search</button>
+        <br>
+        <br>
+        <button onclick="handleToggle(this)" style="margin: 20px 20px;">Create Product</button>
+    </div>
+    <!-- form -->
+    <div id="form">
+        <div>
+            <input type="text" id="id-user">
+        </div>
+        <div>
+            <label for="avatar">Avatar</label>
+            <input 
+                type="file"
+                id="avatar"
+                name="avatar">
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name">
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input
+              type="number"
+              id="price"
+              name="price">
+        </div>
+        <div>
+            <button onclick="handleAddUser()">Submit</button>
+            <button onclick="handleAddUser2()">Submit nâng cao</button>
+          </div>
+    </div>
+    <table cellpadding="20">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Avartar</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><img src="./img/bt-1558.png" alt="" srcset=""></td>
+                <td>BT1</td>
+                <td>1000$</td>
+                <td><button>Edit</button><button>Delete</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><img src="./img/ban-nhac-1458202750027.jpg" alt="" srcset=""></td>
+                <td>BT2</td>
+                <td>2000$</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script src="./main.js"></script>
+</html>
