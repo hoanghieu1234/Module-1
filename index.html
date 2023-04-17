@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 21</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      input {
+        padding: 10px;
+      }
+      .password {
+        position: relative;
+        width: 200px;
+      }
+      .eye-style {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+      }
+      .fa-eye {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="/">
+              <img src="images/Logo-Rikkei.png" alt="" />
+            </a>
+            <div class="bar-toggle">
+              <i class="fa-solid fa-bars" onclick="handleToggle()"></i>
+              <i
+                class="fa-solid fa-xmark display-none"
+                onclick="handleToggle()"
+              ></i>
+            </div>
+          </div>
+          <ul>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#service">Services </a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <form action="" id="login" onsubmit="handleSubmit()">
+      <input
+        type="text"
+        placeholder="Fill your user"
+        id="username"
+        oninput="handleInput(this.value)"
+      />
+      <br />
+      <br />
+      <div class="password">
+        <input type="password" id="password" />
+        <i
+          class="fa-solid fa-eye eye-style"
+          onclick="handleShowHiddenPassword()"
+        ></i>
+        <i
+          class="fa-solid fa-eye-slash eye-style"
+          onclick="handleShowHiddenPassword()"
+        ></i>
+      </div>
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      // let value = this.value --> Khi hàm được gọi, thì mới đặt bằng tham số giá trị được truyền vào
+      function handleInput(value) {
+        const yourUser = document.querySelector("#username");
+        yourUser.style.border = "2px solid red";
+        yourUser.style.outline = "none";
+      }
+
+      function handleShowHiddenPassword() {
+        const passwordElement = document.querySelector("#password");
+        const eyeShow = document.querySelector(".password .fa-eye");
+        const eyeHidden = document.querySelector(".password .fa-eye-slash");
+        if (passwordElement.type === "password") {
+          passwordElement.type = "text";
+          eyeShow.style.display = "inline";
+          eyeHidden.style.display = "none";
+        } else {
+          passwordElement.type = "password";
+          eyeHidden.style.display = "inline";
+          eyeShow.style.display = "none";
+        }
+      }
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
