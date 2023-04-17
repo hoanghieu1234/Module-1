@@ -12,6 +12,7 @@ function handleToggle() {
   }
 }
 // method dùng để lắng nghe sự kiện
+
 window.addEventListener("resize", () => {
   const ulElement = document.querySelector(".navbar ul");
   const barToggle = document.querySelector(".bar-toggle");
@@ -24,3 +25,24 @@ window.addEventListener("resize", () => {
     barToggle.style.display = "block";
   }
 });
+
+window.addEventListener("keydown", (event) => {
+  console.log(1111111, event);
+  if (event.shiftKey) {
+    console.log("Chữ viết hoa", event.key);
+  }
+});
+
+// Xử lý submit dữ liệu
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(e);
+});
+
+const users = [
+  { userName: "phucdeptrai", password: "daconguoiyeu" },
+  { userName: "huyquanhoa", password: "luonyeudoi" },
+  { userName: "xuyendaigia", password: "nhieutien" },
+];
