@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <style>
+        ._password {
+            position: relative;
+            width: 200px;
+        }
+        input {
+            padding: 10px;
+        }
+        .eyes-style{
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .bx-bullseye {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./img/5.jpg" alt="" srcset="">
+            </div>
+            <i class='bx bx-list-ul' onclick="handleShowMenu()"></i>
+            <ul id="list-item">
+                <li ><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#Service">Service</a></li>
+                <li><a href="Contract">Contract</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form action="" method="post">
+        <!-- <input type="text" placeholder="Fill your user" id="username" oninput="handleInput(this.value)"> -->
+        <br>
+        <br>
+            <div class="password_new">
+                <!-- <i class='bx bxs-low-vision eyes-style' onclick="handleShowHiddenPassword()"></i>
+                <i class='bx bx-bullseye eyes-style' onclick="handleShowHiddenPassword()" ></i> -->
+                <label for="username">UserName</label>
+                <input type="text" id="username">
+                <label for="password">PassWord</label>
+                <input type="password" id="password">
+                <input type="submit" value="submit">
+            </div>
+    </form>
+</body>
+<script>
+    // function handleInput(value) {
+       
+    // }
+    // function handleShowHiddenPassword() {
+    //     const passwordElement = document.querySelector("#password");
+    //     const eyeShow = document.querySelector(".bxs-low-vision");
+    //     const eyeHiddien = document.querySelector(".bx-bullseye");
+    //     if(passwordElement.type === 'password') {
+    //         passwordElement.type = 'text';
+    //         eyeShow.style.display = 'inline';
+    //         eyeHiddien.style.display = 'none';
+    //     } else {
+    //         passwordElement.type = 'password';
+    //         eyeHiddien.style.display = 'inline';
+    //         eyeShow.style.display = 'none';
+    //     }
+    // }
+    // Xử lí submit dữ liệu.
+    form.addEventListener("submit",(e) =>{
+        const _user = document.querySelector("#username").value;
+        console.log(_user);
+        e.preventDefault();
+        
+    });
+    
+    const users = [
+        {
+            userName:"phucdeptrai",
+            passWord:"dangconguoiyeu",
+        },
+        {
+            userName:"huyquanhoa",
+            passWord:"luonyeudoi",
+        },
+        {
+            userName:"xuyendaigia",
+            passWord:"nhieutien",
+        },
+    ];
+</script>
+</html>
